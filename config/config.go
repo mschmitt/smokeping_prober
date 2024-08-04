@@ -47,6 +47,7 @@ var (
 		Network:  "ip",
 		Protocol: "icmp",
 		Size:     56,
+		Mark:     0,
 	}
 )
 
@@ -94,6 +95,7 @@ type TargetGroup struct {
 	Network  string        `yaml:"network,omitempty"`
 	Protocol string        `yaml:"protocol,omitempty"`
 	Size     int           `yaml:"size,omitempty"`
+	Mark     uint          `yaml:"mark,omitempty"`
 	Source   string        `yaml:"source,omitempty"`
 	// TODO: Needs work to fix MetricFamily consistency.
 	// Labels   map[string]string `yaml:"labels,omitempty"`

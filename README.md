@@ -29,6 +29,7 @@ Flags:
   -i, --ping.interval=1s         Ping interval duration
       --privileged               Run in privileged ICMP mode
   -s, --ping.size=56             Ping packet size in bytes
+  -m, --ping.mark=0              Ping firewall mark (for policy routing)
       --log.level=info           Only log messages with the given severity or above. One of: [debug, info, warn,
                                  error]
       --log.format=logfmt        Output format of log messages. One of: [logfmt, json]
@@ -54,7 +55,8 @@ targets:
   network: ip # One of ip, ip4, ip6. Default: ip (automatic IPv4/IPv6)
   protocol: icmp # One of icmp, udp. Default: icmp (Requires privileged operation)
   size: 56 # Packet data size in bytes. Default 56 (Range: 24 - 65535)
-  source: 127.0.1.1 # Souce IP address to use. Default: None (automatic selection)
+  source: 127.0.1.1 # Source IP address to use. Default: None (automatic selection)
+  mark: 0 # fwmark for outgoing packet (for policy routing). Default: 0 (Requires privileged operation)
 ```
 
 In each host group the `interval`, `network`, and `protocol` are optional.
